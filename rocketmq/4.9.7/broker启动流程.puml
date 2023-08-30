@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+partition #dcecfc BrokerController#initialize {
+:加载topic配置、消费偏移量、订阅组、消费过滤;
+:初始化DefaultMessageStore等消息存储服务，同时监听默认端口10912，用于broker的主从同步;
+:DefaultMessageStore加载commit log、consume queue等;
+:初始化remotingServer，netty服务端，默认监听10911端口;
+:初始化fastRemotingServer（与remotingServer相比只处理生产者生产消息请求），netty服务端，默认监听10909端口;
+:初始化9个线程池执行器，比如发送消息的、拉取消息的、查询消息的;
+:注册执行器到对应的服务上;
+:启动9个定时任务;
+:初始化ssl证书变化监听服务;
+:初始化事务相关服务和监听器
+:初始化AccessValidator，注册rpc钩子;
+:初始化rpc钩子;
+}
+
+partition #d5e8d4 BrokerController#start {
+:启动消息存储服务;
+:启动remotingServer，netty服务端;
+:启动fastRemotingServer，neety服务端;
+:启动ssl证书变化监听服务;
+:启动OuterAPI，netty客户端;
+:启动消息拉取消费长轮询服务;
+:启动客户端存活探针服务（客户端即生产者和消费者）;
+:启动定时任务，向所有namesrv注册broker，延迟10s执行，周期默认30s;
+:启动broker状态管理器;
+:启动定时任务，用于快速失败，清除过期的请求，延迟1s执行，周期10ms;
+}
+
+stop
+
+@enduml
