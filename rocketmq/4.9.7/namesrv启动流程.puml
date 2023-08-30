@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+partition #d8e8cf NamesrvController#initialize {
+:kvConfigManager加载键值对配置到内存;
+:构造NettyRemotingServer，初始化netty服务端（监听9876端口）;
+:初始化remotingExecutor远程通信服务执行器;
+:将执行器注册到NettyRemotingServer实例;
+:启动定时任务，扫描不活跃的broker，延迟5s执行，周期10s;
+:启动定时任务，打印全部键值对配置，延迟1s执行，周期10s;
+:根据配置的tls模式来注册监听器，监听证书变化，以便重载sslContext;
+}
+
+:添加shutdown钩子;
+
+partition #bee6e8 NamesrvController#start {
+:启动netty服务端;
+:启动FileWatchService，监听证书变化;
+}
+
+stop
+
+@enduml

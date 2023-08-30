@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+partition #dcecfc DefaultMQProducerImpl#start(boolean) {
+:检查配置，只是检查生产组命名是否规范;
+:初始化MQClientInstance;
+:注册生产者;
+}
+
+partition #d5e8d4 MQClientInstance#start {
+:启动netty客户端;
+:启动5个定时任务;
+:启动拉取消息服务;
+:启动负载均衡器;
+:再次调用DefaultMQProducerImpl.start(boolean)，但入参为false，不会再进入当前方法;
+}
+
+stop
+
+@enduml
