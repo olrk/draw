@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2023-12-27T08:57:13.414Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="yGPAUxutEw89ETBpEGNM" version="21.2.8" type="device">
+  <diagram name="第 1 页" id="OqUazqkdgP5EdM4-5xvv">
+    <mxGraphModel dx="598" dy="395" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-1" value="len" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-2" value="alloc" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="230" y="280" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-3" value="flags" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="300" y="280" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-4" value="buf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="370" y="280" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-5" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="383" as="sourcePoint" />
+            <mxPoint x="370" y="323" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-6" value="SDS指针，指向buf起始地址" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="380" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-8" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="220" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8Kbr7v8KLRxXVlea7lr7-9" value="头部" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="190" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
